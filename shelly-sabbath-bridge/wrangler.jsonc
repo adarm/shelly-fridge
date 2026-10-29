@@ -1,0 +1,16 @@
+{
+  "name": "shelly-sabbath-bridge",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-01",
+  "durable_objects": {
+    "bindings": [{ "name": "CONTROLLER", "class_name": "Controller" }]
+  },
+  "exports": {
+    "Controller": { "type": "durable-object", "storage": "sqlite" }
+  },
+  "triggers": { "crons": ["17 2 * * *"] },
+  "vars": {
+    "DEVICE_ID": "PUT_REFRIGERATOR_DEVICE_ID_HERE",
+    "PUBLIC_URL": "https://shelly-sabbath-bridge.YOUR_SUBDOMAIN.workers.dev"
+  }
+}
